@@ -393,8 +393,11 @@ class PhotoCollector {
     }
 
     shouldRetry(error) {
-        // Don't retry on authentication/permission errors
-        const noRetryErrors = ['InvalidAccessKeyId', 'SignatureDoesNotMatch', 'AccessDenied', 'NoSuchBucket'];
+        // Don't retry on authentication/permission errors or if no error object
+        if (!error || !error.code) {
+            return false;
+        }
+        const noRetryErrors = ['InvalidAccessKeyId', 'SignatureDoesNotMatch', 'AccessDenied', 'NoSuchBucket', 'NetworkingError'];
         return !noRetryErrors.includes(error.code);
     }
 
@@ -463,6 +466,8 @@ class PhotoCollector {
         const accessKey = this.elements.s3AccessKey.value.trim();
         const secretKey = this.elements.s3SecretKey.value.trim();
 
+        console.log('Validating S3 config:', { bucket, region, accessKey: accessKey + ' (length: ' + accessKey.length + ')', secretKey: '***' + secretKey.slice(-4) + ' (length: ' + secretKey.length + ')' });
+
         if (!bucket) {
             return { valid: false, message: 'S3 bucket name is required' };
         }
@@ -492,10 +497,12 @@ class PhotoCollector {
 
         const accessKeyPattern = /^[A-Z0-9]{20}$/;
         if (!accessKeyPattern.test(accessKey)) {
+            console.log('Access key validation failed. Key:', accessKey, 'Length:', accessKey.length, 'Pattern test:', accessKeyPattern.test(accessKey));
             return { valid: false, message: 'Invalid Access Key ID format' };
         }
 
         if (secretKey.length !== 40) {
+            console.log('Secret key length validation failed. Length:', secretKey.length);
             return { valid: false, message: 'Invalid Secret Access Key length' };
         }
 
@@ -514,17 +521,26 @@ class PhotoCollector {
 
     loadS3Config() {
         try {
-            // Default S3 configuration - loaded from external config if available
+            // Default S3 configuration - must be loaded from external config file
             let defaultConfig = {
-                bucket: 'photo-collector1',
-                region: 'us-east-1',
+                bucket: '',
+                region: '',
                 accessKey: '',
                 secretKey: ''
             };
 
-            // Try to load from external config file (if available)
+            // Load from external config file (required for security)
             if (typeof AWS_CONFIG !== 'undefined') {
-                defaultConfig = AWS_CONFIG;
+                console.log('Loading AWS config from external file');
+                defaultConfig = {
+                    bucket: AWS_CONFIG.bucket || '',
+                    region: AWS_CONFIG.region || 'us-east-1',
+                    accessKey: AWS_CONFIG.accessKey || '',
+                    secretKey: AWS_CONFIG.secretKey || ''
+                };
+            } else {
+                console.warn('AWS_CONFIG not found! Please ensure config.js is included and contains valid credentials.');
+                this.showMessage('Configuration file missing. Please check that config.js exists and is properly loaded.', 'error');
             }
 
             const saved = localStorage.getItem('photoCollectorS3Config');
