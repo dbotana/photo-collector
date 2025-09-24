@@ -514,13 +514,18 @@ class PhotoCollector {
 
     loadS3Config() {
         try {
-            // Default S3 configuration
-            const defaultConfig = {
+            // Default S3 configuration - loaded from external config if available
+            let defaultConfig = {
                 bucket: 'photo-collector1',
                 region: 'us-east-1',
-                accessKey: 'photo-collector-user1',
-                secretKey: 'Photo-collector-password'
+                accessKey: '',
+                secretKey: ''
             };
+
+            // Try to load from external config file (if available)
+            if (typeof AWS_CONFIG !== 'undefined') {
+                defaultConfig = AWS_CONFIG;
+            }
 
             const saved = localStorage.getItem('photoCollectorS3Config');
             let config = defaultConfig;
