@@ -8,11 +8,3 @@ const AWS_CONFIG = {
     accessKey: 'YOUR_AWS_ACCESS_KEY_ID_HERE',
     secretKey: 'YOUR_AWS_SECRET_ACCESS_KEY_HERE'
 };
-
-// Example:
-// const AWS_CONFIG = {
-//     bucket: 'photo-collector1',
-//     region: 'us-east-1',
-//     accessKey: 'AKIAIOSFODNN7EXAMPLE',
-//     secretKey: 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
-// };
