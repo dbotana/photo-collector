@@ -10,6 +10,22 @@ secrets.js
 !.env.template
 !.env.example
 
+# AWS CLI Configuration Files
+.aws/
+aws-credentials.json
+aws-admin-config.json
+*-credentials.json
+
+# HIPAA Infrastructure Files
+infrastructure/.env*
+infrastructure/aws-config*
+infrastructure/credentials*
+
+# Security Sensitive Files
+*.credentials
+*-secrets.*
+admin-access*
+
 # SSL Certificates (for HTTPS server)
 server.crt
 server.key
