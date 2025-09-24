@@ -1,0 +1,1295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="84" failures="52" errors="0" time="38.841">
+  <testsuite name="Authentication System" errors="0" failures="18" skipped="0" timestamp="2025-09-24T20:29:24" time="7.09" tests="24">
+    <testcase classname="Authentication System POST /auth/login should successfully authenticate valid credentials" name="Authentication System POST /auth/login should successfully authenticate valid credentials" time="0.402">
+      <failure>Error: expected 200 &quot;OK&quot;, got 401 &quot;Unauthorized&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:34:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System POST /auth/login should reject invalid username" name="Authentication System POST /auth/login should reject invalid username" time="0.022">
+      <failure>Error: expected 401 &quot;Unauthorized&quot;, got 400 &quot;Bad Request&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:57:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System POST /auth/login should reject invalid password" name="Authentication System POST /auth/login should reject invalid password" time="0.168">
+    </testcase>
+    <testcase classname="Authentication System POST /auth/login should validate required fields" name="Authentication System POST /auth/login should validate required fields" time="0.047">
+      <failure>Error: expected 400 &quot;Bad Request&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:94:18)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System POST /auth/login should handle rate limiting for excessive attempts" name="Authentication System POST /auth/login should handle rate limiting for excessive attempts" time="0.066">
+    </testcase>
+    <testcase classname="Authentication System POST /auth/login should sanitize input data" name="Authentication System POST /auth/login should sanitize input data" time="0.041">
+      <failure>Error: expected 401 &quot;Unauthorized&quot;, got 400 &quot;Bad Request&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:128:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System POST /auth/logout should successfully logout with valid token" name="Authentication System POST /auth/logout should successfully logout with valid token" time="0.037">
+      <failure>Error: expected 200 &quot;OK&quot;, got 400 &quot;Bad Request&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:154:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System POST /auth/logout should require authentication token" name="Authentication System POST /auth/logout should require authentication token" time="0.039">
+      <failure>Error: expected 401 &quot;Unauthorized&quot;, got 400 &quot;Bad Request&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:163:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System POST /auth/logout should reject invalid token" name="Authentication System POST /auth/logout should reject invalid token" time="0.038">
+      <failure>Error: expected 403 &quot;Forbidden&quot;, got 400 &quot;Bad Request&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:170:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System GET /auth/verify should verify valid token" name="Authentication System GET /auth/verify should verify valid token" time="0.02">
+      <failure>Error: expected 200 &quot;OK&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:192:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System GET /auth/verify should reject missing token" name="Authentication System GET /auth/verify should reject missing token" time="0.022">
+      <failure>Error: expected 401 &quot;Unauthorized&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:202:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System Security Features should include security headers" name="Authentication System Security Features should include security headers" time="0.017">
+      <failure>Error: expect(received).toHaveProperty(path, value)
+
+Expected path: &quot;x-frame-options&quot;
+
+Expected value: &quot;DENY&quot;
+Received value: &quot;SAMEORIGIN&quot;
+    at Object.toHaveProperty (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:213:38)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)</failure>
+    </testcase>
+    <testcase classname="Authentication System Security Features should validate content-type for POST requests" name="Authentication System Security Features should validate content-type for POST requests" time="0.024">
+    </testcase>
+    <testcase classname="Authentication System Security Features should prevent request size attacks" name="Authentication System Security Features should prevent request size attacks" time="0.033">
+      <failure>Error: expected 413 &quot;Payload Too Large&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:234:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System HIPAA Compliance should log authentication attempts" name="Authentication System HIPAA Compliance should log authentication attempts" time="0.015">
+      <failure>Error: expected 200 &quot;OK&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:247:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System HIPAA Compliance should not expose sensitive information in errors" name="Authentication System HIPAA Compliance should not expose sensitive information in errors" time="0.012">
+      <failure>Error: expected 401 &quot;Unauthorized&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:260:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System Performance Tests should respond to login within reasonable time" name="Authentication System Performance Tests should respond to login within reasonable time" time="0.011">
+      <failure>Error: expected 200 &quot;OK&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:279:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Authentication System Performance Tests should handle concurrent login requests" name="Authentication System Performance Tests should handle concurrent login requests" time="0.089">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 429
+    at toBe (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:299:41)
+    at Array.forEach (&lt;anonymous&gt;)
+    at Object.forEach (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:298:23)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)</failure>
+    </testcase>
+    <testcase classname="Encryption Utilities should encrypt and decrypt data correctly" name="Encryption Utilities should encrypt and decrypt data correctly" time="0.022">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:314:38)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Encryption Utilities should generate secure random keys" name="Encryption Utilities should generate secure random keys" time="0.001">
+    </testcase>
+    <testcase classname="Encryption Utilities should hash sensitive data consistently" name="Encryption Utilities should hash sensitive data consistently" time="0.185">
+    </testcase>
+    <testcase classname="Encryption Utilities should verify hashed data correctly" name="Encryption Utilities should verify hashed data correctly" time="0.278">
+    </testcase>
+    <testcase classname="Encryption Utilities should encrypt PHI data with metadata" name="Encryption Utilities should encrypt PHI data with metadata" time="0.008">
+      <failure>Error: Encryption failed
+    at encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at Object.encrypt [as encryptPHI] (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:188:27)
+    at Object.encryptPHI (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:361:38)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Encryption Utilities should detect data tampering" name="Encryption Utilities should detect data tampering" time="0.006">
+      <failure>Error: Encryption failed
+    at encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at Object.encrypt [as encryptPHI] (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:188:27)
+    at Object.encryptPHI (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\auth.test.js:374:38)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Secure Upload System" errors="0" failures="22" skipped="0" timestamp="2025-09-24T20:29:24" time="7.229" tests="24">
+    <testcase classname="Secure Upload System POST /upload/secure should successfully upload encrypted file" name="Secure Upload System POST /upload/secure should successfully upload encrypted file" time="0.435">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:77:47)
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:107:35)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System POST /upload/secure should require authentication" name="Secure Upload System POST /upload/secure should require authentication" time="0.177">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:77:47)
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:127:35)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System POST /upload/secure should validate required fields" name="Secure Upload System POST /upload/secure should validate required fields" time="0.171">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:77:47)
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:148:33)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System POST /upload/secure should validate file size limits" name="Secure Upload System POST /upload/secure should validate file size limits" time="0.164">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:77:47)
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:160:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System POST /upload/secure should verify organization access" name="Secure Upload System POST /upload/secure should verify organization access" time="0.164">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:77:47)
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:171:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System POST /upload/secure should handle S3 upload failures" name="Secure Upload System POST /upload/secure should handle S3 upload failures" time="0.023">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:77:47)
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:190:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System POST /upload/secure should include proper S3 metadata" name="Secure Upload System POST /upload/secure should include proper S3 metadata" time="0.016">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:77:47)
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:200:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System POST /upload/secure should use proper S3 key structure" name="Secure Upload System POST /upload/secure should use proper S3 key structure" time="0.016">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:77:47)
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:218:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System GET /upload/history should return upload history for authenticated user" name="Secure Upload System GET /upload/history should return upload history for authenticated user" time="0.058">
+      <failure>Error: expected 200 &quot;OK&quot;, got 403 &quot;Forbidden&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:264:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System GET /upload/history should require authentication for history access" name="Secure Upload System GET /upload/history should require authentication for history access" time="0.026">
+    </testcase>
+    <testcase classname="Secure Upload System GET /upload/history should support pagination" name="Secure Upload System GET /upload/history should support pagination" time="0.042">
+      <failure>Error: expected 200 &quot;OK&quot;, got 403 &quot;Forbidden&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:281:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System DELETE /upload/:uploadId should delete upload with proper permissions" name="Secure Upload System DELETE /upload/:uploadId should delete upload with proper permissions" time="0.043">
+      <failure>Error: expected 200 &quot;OK&quot;, got 403 &quot;Forbidden&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:307:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System DELETE /upload/:uploadId should require authentication for deletion" name="Secure Upload System DELETE /upload/:uploadId should require authentication for deletion" time="0.019">
+    </testcase>
+    <testcase classname="Secure Upload System DELETE /upload/:uploadId should handle non-existent upload" name="Secure Upload System DELETE /upload/:uploadId should handle non-existent upload" time="0.042">
+      <failure>Error: expected 404 &quot;Not Found&quot;, got 403 &quot;Forbidden&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:333:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System Security Tests should sanitize upload metadata" name="Secure Upload System Security Tests should sanitize upload metadata" time="0.009">
+      <failure>ReferenceError: createValidUploadPayload is not defined
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:339:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System Security Tests should validate upload timestamp" name="Secure Upload System Security Tests should validate upload timestamp" time="0.01">
+      <failure>ReferenceError: createValidUploadPayload is not defined
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:352:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System Security Tests should prevent path traversal in filenames" name="Secure Upload System Security Tests should prevent path traversal in filenames" time="0.009">
+      <failure>ReferenceError: createValidUploadPayload is not defined
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:363:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System Performance Tests should handle upload within reasonable time" name="Secure Upload System Performance Tests should handle upload within reasonable time" time="0.01">
+      <failure>ReferenceError: createValidUploadPayload is not defined
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:376:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System Performance Tests should handle concurrent uploads" name="Secure Upload System Performance Tests should handle concurrent uploads" time="0.011">
+      <failure>ReferenceError: createValidUploadPayload is not defined
+    at createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:391:33)
+    at Array.map (&lt;anonymous&gt;)
+    at Object.map (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:390:45)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System HIPAA Compliance should create audit trail for uploads" name="Secure Upload System HIPAA Compliance should create audit trail for uploads" time="0.012">
+      <failure>ReferenceError: createValidUploadPayload is not defined
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:409:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System HIPAA Compliance should use proper encryption in transit and at rest" name="Secure Upload System HIPAA Compliance should use proper encryption in transit and at rest" time="0.01">
+      <failure>ReferenceError: createValidUploadPayload is not defined
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:422:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Secure Upload System HIPAA Compliance should isolate data by organization" name="Secure Upload System HIPAA Compliance should isolate data by organization" time="0.009">
+      <failure>ReferenceError: createValidUploadPayload is not defined
+    at Object.createValidUploadPayload (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:439:29)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Upload Encryption Integration should maintain data integrity through encryption layers" name="Upload Encryption Integration should maintain data integrity through encryption layers" time="0.006">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:468:44)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Upload Encryption Integration should detect tampering in double-encrypted data" name="Upload Encryption Integration should detect tampering in double-encrypted data" time="0.006">
+      <failure>Error: Encryption failed
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\utils\encryption.js:77:15)
+    at Object.encrypt (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\upload.test.js:486:39)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Security Middleware" errors="0" failures="12" skipped="0" timestamp="2025-09-24T20:29:24" time="37.713" tests="36">
+    <testcase classname="Security Middleware Security Headers should include all required security headers" name="Security Middleware Security Headers should include all required security headers" time="0.131">
+      <failure>Error: expect(received).toHaveProperty(path, value)
+
+Expected path: &quot;x-frame-options&quot;
+
+Expected value: &quot;DENY&quot;
+Received value: &quot;SAMEORIGIN&quot;
+    at Object.toHaveProperty (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:31:38)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)</failure>
+    </testcase>
+    <testcase classname="Security Middleware Security Headers should set proper HSTS header" name="Security Middleware Security Headers should set proper HSTS header" time="0.018">
+    </testcase>
+    <testcase classname="Security Middleware Content Type Validation should accept valid JSON content type" name="Security Middleware Content Type Validation should accept valid JSON content type" time="0.068">
+      <failure>Error: expected 401 &quot;Unauthorized&quot;, got 400 &quot;Bad Request&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:59:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Security Middleware Content Type Validation should reject invalid content type" name="Security Middleware Content Type Validation should reject invalid content type" time="0.105">
+    </testcase>
+    <testcase classname="Security Middleware Content Type Validation should reject missing content type for POST" name="Security Middleware Content Type Validation should reject missing content type for POST" time="0.038">
+    </testcase>
+    <testcase classname="Security Middleware Request Size Validation should reject oversized requests" name="Security Middleware Request Size Validation should reject oversized requests" time="30.003">
+      <failure>Error: thrown: &quot;Exceeded timeout of 30000 ms for a test.
+Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout.&quot;
+    at test (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:79:9)
+    at _dispatchDescribe (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\index.js:91:26)
+    at describe (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\index.js:55:5)
+    at describe (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:78:5)
+    at _dispatchDescribe (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\index.js:91:26)
+    at describe (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\index.js:55:5)
+    at Object.describe (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:9:1)
+    at Runtime._execModule (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runtime\build\index.js:1439:24)
+    at Runtime._loadModule (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runtime\build\index.js:1022:12)
+    at Runtime.requireModule (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runtime\build\index.js:882:12)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:77:13)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Security Middleware Input Sanitization should sanitize XSS attempts" name="Security Middleware Input Sanitization should sanitize XSS attempts" time="0.05">
+      <failure>Error: expected 401 &quot;Unauthorized&quot;, got 400 &quot;Bad Request&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:103:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Security Middleware Input Sanitization should detect SQL injection patterns" name="Security Middleware Input Sanitization should detect SQL injection patterns" time="0.023">
+    </testcase>
+    <testcase classname="Security Middleware Input Sanitization should detect path traversal attempts" name="Security Middleware Input Sanitization should detect path traversal attempts" time="0.042">
+    </testcase>
+    <testcase classname="Security Middleware Rate Limiting should enforce general rate limits" name="Security Middleware Rate Limiting should enforce general rate limits" time="1.326">
+    </testcase>
+    <testcase classname="Security Middleware Rate Limiting should enforce stricter auth rate limits" name="Security Middleware Rate Limiting should enforce stricter auth rate limits" time="0.098">
+    </testcase>
+    <testcase classname="Security Middleware CORS Protection should handle preflight requests correctly" name="Security Middleware CORS Protection should handle preflight requests correctly" time="0.017">
+    </testcase>
+    <testcase classname="Security Middleware CORS Protection should reject requests from unauthorized origins" name="Security Middleware CORS Protection should reject requests from unauthorized origins" time="0.009">
+    </testcase>
+    <testcase classname="Security Middleware Error Information Disclosure should not expose internal errors in production" name="Security Middleware Error Information Disclosure should not expose internal errors in production" time="0.009">
+      <failure>Error: expected 404 &quot;Not Found&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:198:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Security Middleware Error Information Disclosure should provide generic error messages" name="Security Middleware Error Information Disclosure should provide generic error messages" time="0.01">
+      <failure>Error: expected 401 &quot;Unauthorized&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:214:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Security Middleware Session Security should invalidate sessions on logout" name="Security Middleware Session Security should invalidate sessions on logout" time="0.014">
+      <failure>Error: expected 200 &quot;OK&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:243:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Security Middleware Session Security should handle token manipulation attempts" name="Security Middleware Session Security should handle token manipulation attempts" time="0.006">
+      <failure>TypeError: Cannot read properties of undefined (reading &apos;slice&apos;)
+    at Object.slice (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:253:48)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="Security Middleware Session Security should reject expired tokens" name="Security Middleware Session Security should reject expired tokens" time="0.012">
+      <failure>Error: expected 403 &quot;Forbidden&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:269:18)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="Audit Logging Security should hash sensitive data in audit logs" name="Audit Logging Security should hash sensitive data in audit logs" time="0.001">
+    </testcase>
+    <testcase classname="Audit Logging Security should sanitize audit entries" name="Audit Logging Security should sanitize audit entries" time="0">
+    </testcase>
+    <testcase classname="Audit Logging Security should generate unique event IDs" name="Audit Logging Security should generate unique event IDs" time="0.002">
+    </testcase>
+    <testcase classname="Encryption Security should use secure random number generation" name="Encryption Security should use secure random number generation" time="0.001">
+    </testcase>
+    <testcase classname="Encryption Security should use proper key derivation" name="Encryption Security should use proper key derivation" time="0.194">
+    </testcase>
+    <testcase classname="Encryption Security should use proper encryption parameters" name="Encryption Security should use proper encryption parameters" time="0.001">
+    </testcase>
+    <testcase classname="Encryption Security should wipe sensitive data from memory" name="Encryption Security should wipe sensitive data from memory" time="0.001">
+    </testcase>
+    <testcase classname="Environment Security should not expose sensitive environment variables" name="Environment Security should not expose sensitive environment variables" time="0.001">
+    </testcase>
+    <testcase classname="Environment Security should use secure defaults" name="Environment Security should use secure defaults" time="0">
+    </testcase>
+    <testcase classname="Network Security should enforce HTTPS in production" name="Network Security should enforce HTTPS in production" time="0">
+    </testcase>
+    <testcase classname="Network Security should validate request origins" name="Network Security should validate request origins" time="0.009">
+      <failure>Error: expected 200 &quot;OK&quot;, got 429 &quot;Too Many Requests&quot;
+    at Object.expect (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:398:14)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)
+----
+    at Test._assertStatus (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:518:28)
+    at Server.emit (node:domain:489:12)
+    at emitCloseNT (node:net:2416:8)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)</failure>
+    </testcase>
+    <testcase classname="File Upload Security should validate file types" name="File Upload Security should validate file types" time="0.002">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+    at toBe (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:412:112)
+    at Array.forEach (&lt;anonymous&gt;)
+    at Object.forEach (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:410:22)
+    at Promise.then.completed (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\node_modules\jest-runner\build\testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="File Upload Security should validate file size limits" name="File Upload Security should validate file size limits" time="0.001">
+    </testcase>
+    <testcase classname="Data Sanitization should remove script tags from input" name="Data Sanitization should remove script tags from input" time="0.002">
+    </testcase>
+    <testcase classname="Data Sanitization should handle various XSS vectors" name="Data Sanitization should handle various XSS vectors" time="0.001">
+    </testcase>
+    <testcase classname="Compliance Verification should maintain audit trail completeness" name="Compliance Verification should maintain audit trail completeness" time="0.003">
+    </testcase>
+    <testcase classname="Compliance Verification should implement proper data retention" name="Compliance Verification should implement proper data retention" time="0">
+    </testcase>
+    <testcase classname="Penetration Testing Preparation should handle common attack vectors" name="Penetration Testing Preparation should handle common attack vectors" time="0.01">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+    at Object.toBe (C:\Users\dbota\Documents\color correction files 7-21\photo-collector\hipaa-compliant-version\server\tests\security.test.js:508:58)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

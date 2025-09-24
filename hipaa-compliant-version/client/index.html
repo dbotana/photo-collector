@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIPAA Compliant Photo Collector</title>
+
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="HIPAA PhotoCollector">
+
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self' https://your-api-gateway.amazonaws.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Authentication Section -->
+        <div id="authSection" class="auth-section">
+            <div class="auth-container">
+                <h1>🔒 HIPAA Compliant Photo Collector</h1>
+                <p>Secure authentication required</p>
+
+                <div class="auth-form">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button id="loginBtn" class="primary-btn">🔐 Secure Login</button>
+                </div>
+
+                <div class="security-notice">
+                    <p><strong>Security Notice:</strong> This application is HIPAA compliant and uses end-to-end encryption for all PHI data.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Application (Hidden until authenticated) -->
+        <div id="appSection" class="app-section hidden">
+            <header>
+                <div class="header-content">
+                    <h1>📸 HIPAA Photo Collector</h1>
+                    <div class="user-info">
+                        <span id="currentUser">User: Not logged in</span>
+                        <button id="logoutBtn" class="logout-btn">Logout</button>
+                    </div>
+                </div>
+                <p>Secure photo capture with end-to-end encryption</p>
+
+                <!-- Session Status -->
+                <div id="sessionStatus" class="session-status">
+                    <span id="sessionIcon">🔒</span>
+                    <span id="sessionText">Secure Session Active</span>
+                    <span id="sessionExpiry"></span>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <!-- Camera/Upload Controls -->
+                <div class="capture-section">
+                    <div class="button-group">
+                        <button id="cameraBtn" class="primary-btn">
+                            📷 Take Photo
+                        </button>
+                        <button id="uploadBtn" class="secondary-btn">
+                            📁 Upload from Gallery
+                        </button>
+                    </div>
+
+                    <!-- Hidden file input -->
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
+                    <!-- Camera video stream -->
+                    <div id="cameraContainer" class="camera-container hidden">
+                        <video id="cameraVideo" autoplay playsinline></video>
+                        <div class="camera-controls">
+                            <button id="captureBtn" class="capture-btn">📷</button>
+                            <button id="closeCameraBtn" class="close-btn">✕</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Preview -->
+                <div id="previewSection" class="preview-section hidden">
+                    <div class="preview-container">
+                        <img id="previewImage" class="preview-image" alt="Preview">
+                        <button id="removeImageBtn" class="remove-btn">✕</button>
+                    </div>
+
+                    <!-- Description Input -->
+                    <div class="description-section">
+                        <label for="description">Add Description:</label>
+                        <textarea id="description" placeholder="Enter a description for your photo..." rows="3"></textarea>
+                    </div>
+
+                    <!-- Patient Information Fields (Encrypted) -->
+                    <div class="patient-info-section">
+                        <div class="encryption-notice">
+                            <span class="encryption-icon">🔐</span>
+                            <span>All patient data is encrypted before transmission</span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="patientId">Patient ID:</label>
+                                <input type="text" id="patientId" placeholder="Enter Patient ID" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="visitDate">Visit Date:</label>
+                                <input type="date" id="visitDate" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="phoneModel">Device Model:</label>
+                                <input type="text" id="phoneModel" placeholder="e.g., iPhone 14, Samsung S23" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="organizationId">Organization ID:</label>
+                                <input type="text" id="organizationId" placeholder="Organization identifier" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upload Button and Progress -->
+                    <div class="upload-section">
+                        <div class="security-info">
+                            <p><strong>Security Features:</strong></p>
+                            <ul>
+                                <li>✅ End-to-end encryption</li>
+                                <li>✅ Patient ID hashing</li>
+                                <li>✅ Audit trail logging</li>
+                                <li>✅ Secure transmission</li>
+                            </ul>
+                        </div>
+
+                        <button id="uploadToS3Btn" class="upload-btn">
+                            🔐 Secure Upload
+                        </button>
+
+                        <div id="progressContainer" class="progress-container hidden">
+                            <div class="progress-bar">
+                                <div id="progressFill" class="progress-fill"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span id="progressText">0%</span>
+                                <span id="progressStatus">Initializing...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feedback Messages -->
+                <div id="messageContainer" class="message-container"></div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Crypto.js for encryption -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!-- Performance monitoring -->
+    <script src="performance-monitor.js"></script>
+    <!-- Main application script -->
+    <script src="secure-photo-collector.js"></script>
+</body>
+</html>
