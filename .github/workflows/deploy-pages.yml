@@ -1,0 +1,92 @@
+name: Deploy HIPAA Photo Collector to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'docs/**' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'docs/**' ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Validate HTML
+        run: |
+          # Basic HTML validation
+          if ! grep -q "HIPAA_CONFIG" docs/index.html; then
+            echo "⚠️ Warning: HIPAA_CONFIG not found in index.html"
+          fi
+
+          if ! grep -q "secure-photo-collector.js" docs/index.html; then
+            echo "❌ Error: Main script not found"
+            exit 1
+          fi
+
+          echo "✅ HTML validation passed"
+
+      - name: Security Check
+        run: |
+          # Check for hardcoded secrets
+          if grep -r -E "(password|secret|key|token)" docs/ --exclude="*.md" --exclude="*.json"; then
+            echo "⚠️ Warning: Potential secrets found in code"
+          fi
+
+          # Check CSP headers
+          if grep -q "Content-Security-Policy" docs/_headers; then
+            echo "✅ CSP headers configured"
+          else
+            echo "⚠️ Warning: CSP headers not found"
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  post-deploy:
+    runs-on: ubuntu-latest
+    needs: [build, deploy]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Post-deployment checks
+        run: |
+          echo "✅ HIPAA Photo Collector deployed successfully"
+          echo "🔗 URL: ${{ needs.deploy.outputs.page_url }}"
+          echo ""
+          echo "📋 Next Steps:"
+          echo "1. Update API_BASE_URL in the deployed application"
+          echo "2. Deploy the backend server to handle API requests"
+          echo "3. Configure CORS settings on the backend"
+          echo "4. Test end-to-end functionality"
+          echo ""
+          echo "⚠️ Remember: This application handles PHI data - ensure HIPAA compliance!"

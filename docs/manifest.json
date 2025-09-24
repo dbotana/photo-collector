@@ -1,0 +1,23 @@
+{
+  "name": "HIPAA Photo Collector",
+  "short_name": "HIPAA Photos",
+  "description": "HIPAA compliant photo collection with end-to-end encryption",
+  "start_url": "/photo-collector/",
+  "display": "standalone",
+  "theme_color": "#667eea",
+  "background_color": "#f8fafc",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔒%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔒%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
