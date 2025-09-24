@@ -26,16 +26,77 @@ python -m http.server 8000
 # Access the app at: http://localhost:8000
 ```
 
-### 2. Configure AWS S3 (Detailed setup below)
-- Create an S3 bucket
-- Set up IAM permissions
-- Configure CORS policy
-- Enter credentials in the app
+### 2. Pre-configured S3 Bucket
+The app is **automatically configured** with a test S3 bucket:
+- **Bucket**: `photo-collector1` (TestUploads folder)
+- **Region**: `us-east-1`
+- **Credentials**: Pre-configured for immediate testing
+
+No S3 setup required! Just start testing immediately.
 
 ### 3. Test and Use
 - Grant camera permissions when prompted
 - Take photos or upload from gallery
 - Add descriptions and upload to S3
+
+---
+
+## iPhone Testing Instructions
+
+### Quick iPhone Setup (3 Steps)
+
+#### Step 1: Find Your Computer's Local IP
+**Windows**:
+```cmd
+ipconfig
+```
+Look for "IPv4 Address" (e.g., `192.168.1.100`)
+
+**Mac**:
+```bash
+ifconfig | grep "inet " | grep -v 127.0.0.1
+```
+
+#### Step 2: Start Server with Network Access
+```bash
+cd photo-collector
+
+# Allow network connections (use your computer's IP)
+python -m http.server 8000 --bind 0.0.0.0
+```
+
+#### Step 3: Access from iPhone
+1. **Connect iPhone to same WiFi** as your computer
+2. **Open Safari** on iPhone
+3. **Go to**: `http://YOUR-IP-ADDRESS:8000`
+   - Example: `http://192.168.1.100:8000`
+4. **Allow camera access** when prompted
+5. **Optional**: Tap Share → "Add to Home Screen" for app-like experience
+
+### iPhone Testing Checklist
+- ✅ **Camera opens** when "Take Photo" is tapped
+- ✅ **Large buttons** are easy to tap (optimized for touch)
+- ✅ **Photo gallery** opens when "Upload from Gallery" is tapped
+- ✅ **Preview shows** captured/selected images properly
+- ✅ **Upload works** to S3 with progress indicator
+- ✅ **No horizontal scrolling** (responsive design)
+
+### Troubleshooting iPhone Issues
+
+**Camera doesn't work?**
+- Use Safari browser (not Chrome/Firefox)
+- Ensure HTTP (not HTTPS) for local testing
+- Check camera permissions in Safari settings
+
+**Can't connect from iPhone?**
+- Verify both devices on same WiFi network
+- Check Windows Firewall (may block port 8000)
+- Try `http://YOUR-IP:8000` in iPhone browser first
+
+**Upload fails?**
+- Pre-configured S3 should work immediately
+- Check internet connection on both devices
+- Look for error messages in the app
 
 ---
 

@@ -324,7 +324,7 @@ class PhotoCollector {
             const description = this.elements.description.value.trim();
             const timestamp = new Date().toISOString();
             const sanitizedFileName = this.capturedImage.name.replace(/[^a-zA-Z0-9.-]/g, '_');
-            const fileName = `photos/${timestamp}_${sanitizedFileName}`;
+            const fileName = `TestUploads/${timestamp}_${sanitizedFileName}`;
 
             this.showProgress(0);
             this.elements.uploadToS3Btn.disabled = true;
@@ -514,26 +514,43 @@ class PhotoCollector {
 
     loadS3Config() {
         try {
-            const saved = localStorage.getItem('photoCollectorS3Config');
-            if (saved) {
-                const config = JSON.parse(saved);
+            // Default S3 configuration
+            const defaultConfig = {
+                bucket: 'photo-collector1',
+                region: 'us-east-1',
+                accessKey: 'photo-collector-user1',
+                secretKey: 'Photo-collector-password'
+            };
 
-                // Validate that config is an object
-                if (typeof config === 'object' && config !== null) {
-                    this.elements.s3Bucket.value = config.bucket || '';
-                    this.elements.s3Region.value = config.region || '';
-                    this.elements.s3AccessKey.value = config.accessKey || '';
-                    this.elements.s3SecretKey.value = config.secretKey || '';
-                } else {
-                    console.warn('Invalid S3 config format in localStorage');
+            const saved = localStorage.getItem('photoCollectorS3Config');
+            let config = defaultConfig;
+
+            if (saved) {
+                try {
+                    const savedConfig = JSON.parse(saved);
+                    // Validate that config is an object and merge with defaults
+                    if (typeof savedConfig === 'object' && savedConfig !== null) {
+                        config = { ...defaultConfig, ...savedConfig };
+                    }
+                } catch (parseError) {
+                    console.warn('Invalid S3 config format in localStorage, using defaults');
                     localStorage.removeItem('photoCollectorS3Config');
                 }
             }
+
+            // Apply configuration to form fields
+            this.elements.s3Bucket.value = config.bucket;
+            this.elements.s3Region.value = config.region;
+            this.elements.s3AccessKey.value = config.accessKey;
+            this.elements.s3SecretKey.value = config.secretKey;
+
+            // Save the current configuration (including defaults) to localStorage
+            this.saveS3Config();
+
         } catch (error) {
             console.error('Error loading S3 config:', error);
-            // Clear corrupted data
             localStorage.removeItem('photoCollectorS3Config');
-            this.showMessage('Saved S3 configuration was corrupted and has been cleared.', 'info');
+            this.showMessage('Error loading S3 configuration. Using default settings.', 'info');
         }
     }
 
