@@ -2,11 +2,13 @@
 config.js
 aws-config.js
 s3-config.js
+credentials.js
+secrets.js
 *.key
 *.pem
-.env
-.env.local
-.env.production
+.env*
+!.env.template
+!.env.example
 
 # Node modules (if using npm/yarn)
 node_modules/
