@@ -10,6 +10,14 @@ secrets.js
 !.env.template
 !.env.example
 
+# SSL Certificates (for HTTPS server)
+server.crt
+server.key
+cert.pem
+key.pem
+*.crt
+*.csr
+
 # Node modules (if using npm/yarn)
 node_modules/
 package-lock.json
