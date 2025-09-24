@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Collector - iPhone Debug</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .debug-section {
+            background: #f8f9fa;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .debug-section h3 {
+            color: #007bff;
+            margin-top: 0;
+        }
+        .debug-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        .debug-btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            min-height: 44px;
+        }
+        .debug-btn.primary { background: #007bff; color: white; }
+        .debug-btn.warning { background: #ffc107; color: black; }
+        .debug-btn.success { background: #28a745; color: white; }
+        .debug-status {
+            background: #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 iPhone Camera Debug</h1>
+            <p>Enhanced debugging for iOS camera issues</p>
+        </header>
+
+        <!-- Debug Section -->
+        <div class="debug-section">
+            <h3>🔍 iOS Camera Diagnostics</h3>
+
+            <div class="debug-buttons">
+                <button class="debug-btn primary" onclick="testCamera()">Test Camera Access</button>
+                <button class="debug-btn warning" onclick="testCameraFallback()">Try Fallback</button>
+                <button class="debug-btn success" onclick="exportDebugLog()">Export Debug Log</button>
+            </div>
+
+            <div id="debug-status" class="debug-status">
+                <div>🔄 Loading diagnostics...</div>
+            </div>
+
+            <div id="camera-test-results" style="margin-top: 15px;">
+                <!-- Test results will appear here -->
+            </div>
+        </div>
+
+        <main class="main-content">
+            <!-- Camera/Upload Controls -->
+            <div class="capture-section">
+                <div class="button-group">
+                    <button id="cameraBtn" class="primary-btn">
+                        📷 Take Photo
+                    </button>
+                    <button id="uploadBtn" class="secondary-btn">
+                        📁 Upload from Gallery
+                    </button>
+                </div>
+
+                <!-- Hidden file input -->
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
+                <!-- Camera video stream -->
+                <div id="cameraContainer" class="camera-container hidden">
+                    <video id="cameraVideo" autoplay playsinline></video>
+                    <div class="camera-controls">
+                        <button id="captureBtn" class="capture-btn">📷</button>
+                        <button id="closeCameraBtn" class="close-btn">✕</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Preview -->
+            <div id="previewSection" class="preview-section hidden">
+                <div class="preview-container">
+                    <img id="previewImage" class="preview-image" alt="Preview">
+                    <button id="removeImageBtn" class="remove-btn">✕</button>
+                </div>
+
+                <!-- Description Input -->
+                <div class="description-section">
+                    <label for="description">Add Description:</label>
+                    <textarea id="description" placeholder="Enter a description for your photo..." rows="3"></textarea>
+                </div>
+
+                <!-- Upload Button and Progress -->
+                <div class="upload-section">
+                    <button id="uploadToS3Btn" class="upload-btn">
+                        ☁️ Upload to S3
+                    </button>
+
+                    <div id="progressContainer" class="progress-container hidden">
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                        <span id="progressText">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Messages -->
+            <div id="messageContainer" class="message-container"></div>
+        </main>
+
+        <!-- S3 Configuration -->
+        <div class="config-section">
+            <details>
+                <summary>S3 Configuration</summary>
+                <div class="config-inputs">
+                    <input type="text" id="s3Bucket" placeholder="S3 Bucket Name" required>
+                    <input type="text" id="s3Region" placeholder="AWS Region (e.g., us-east-1)" required>
+                    <input type="text" id="s3AccessKey" placeholder="AWS Access Key ID" required>
+                    <input type="password" id="s3SecretKey" placeholder="AWS Secret Access Key" required>
+                </div>
+            </details>
+        </div>
+
+        <!-- Debug Info Section -->
+        <div class="debug-section">
+            <h3>📋 Debug Information</h3>
+            <p><strong>Purpose:</strong> This debug version helps identify iPhone camera issues</p>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>✅ Use Safari browser (not Chrome/Firefox)</li>
+                <li>✅ iOS 11+ recommended</li>
+                <li>✅ Allow camera permissions when prompted</li>
+                <li>✅ Local network HTTP should work for testing</li>
+            </ul>
+            <p><strong>Common Issues:</strong></p>
+            <ul>
+                <li>🚫 Wrong browser → Switch to Safari</li>
+                <li>🚫 Permission denied → Check Safari settings</li>
+                <li>🚫 HTTPS required → Use local network IP</li>
+                <li>🚫 Camera busy → Close other camera apps</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- AWS SDK -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1563.0.min.js"></script>
+    <!-- Debug script (loads first) -->
+    <script src="debug-camera.js"></script>
+    <!-- Main app script -->
+    <script src="script.js"></script>
+
+    <script>
+        // Enhanced error reporting for debug page
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript Error:', e.error);
+            if (window.iPhoneDebugger) {
+                window.iPhoneDebugger.log(`❌ JS Error: ${e.message}`, 'error');
+            }
+        });
+
+        // Update debug status
+        function updateDebugStatus() {
+            const statusDiv = document.getElementById('debug-status');
+            if (window.iPhoneDebugger && window.iPhoneDebugger.debugLog) {
+                statusDiv.innerHTML = window.iPhoneDebugger.debugLog
+                    .slice(-10) // Show last 10 entries
+                    .map(log => `<div>${log}</div>`)
+                    .join('');
+            }
+        }
+
+        // Update status every 2 seconds
+        setInterval(updateDebugStatus, 2000);
+
+        // Show helpful info on load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const resultsDiv = document.getElementById('camera-test-results');
+                resultsDiv.innerHTML = `
+                    <div style="background: #e7f3ff; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                        <strong>🎯 Quick Start:</strong>
+                        <ol style="margin: 5px 0; padding-left: 20px;">
+                            <li>Click "Test Camera Access" to diagnose issues</li>
+                            <li>Check the debug output above</li>
+                            <li>Try the main "Take Photo" button after testing</li>
+                            <li>Export debug log if issues persist</li>
+                        </ol>
+                    </div>
+                `;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

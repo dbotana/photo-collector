@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Test Image</title>
+</head>
+<body>
+    <h1>Test Image Generator</h1>
+    <canvas id="testCanvas" width="300" height="200" style="border: 1px solid black;"></canvas>
+    <br><br>
+    <button onclick="downloadImage()">Download Test Image</button>
+
+    <script>
+        // Create a test image
+        const canvas = document.getElementById('testCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Fill background
+        ctx.fillStyle = '#0066cc';
+        ctx.fillRect(0, 0, 300, 200);
+
+        // Add text
+        ctx.fillStyle = 'white';
+        ctx.font = '24px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('Test Image', 150, 100);
+        ctx.font = '16px Arial';
+        ctx.fillText('For Photo Collector', 150, 130);
+        ctx.fillText(new Date().toLocaleDateString(), 150, 160);
+
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'test-image.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // Auto-download on load
+        setTimeout(() => {
+            downloadImage();
+            document.body.innerHTML += '<p>Test image downloaded! You can close this page.</p>';
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Collector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📸 Photo Collector</h1>
+            <p>Capture or upload photos with descriptions</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Camera/Upload Controls -->
+            <div class="capture-section">
+                <div class="button-group">
+                    <button id="cameraBtn" class="primary-btn">
+                        📷 Take Photo
+                    </button>
+                    <button id="uploadBtn" class="secondary-btn">
+                        📁 Upload from Gallery
+                    </button>
+                </div>
+
+                <!-- Hidden file input -->
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
+                <!-- Camera video stream -->
+                <div id="cameraContainer" class="camera-container hidden">
+                    <video id="cameraVideo" autoplay playsinline></video>
+                    <div class="camera-controls">
+                        <button id="captureBtn" class="capture-btn">📷</button>
+                        <button id="closeCameraBtn" class="close-btn">✕</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Preview -->
+            <div id="previewSection" class="preview-section hidden">
+                <div class="preview-container">
+                    <img id="previewImage" class="preview-image" alt="Preview">
+                    <button id="removeImageBtn" class="remove-btn">✕</button>
+                </div>
+
+                <!-- Description Input -->
+                <div class="description-section">
+                    <label for="description">Add Description:</label>
+                    <textarea id="description" placeholder="Enter a description for your photo..." rows="3"></textarea>
+                </div>
+
+                <!-- Upload Button and Progress -->
+                <div class="upload-section">
+                    <button id="uploadToS3Btn" class="upload-btn">
+                        ☁️ Upload to S3
+                    </button>
+
+                    <div id="progressContainer" class="progress-container hidden">
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                        <span id="progressText">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Messages -->
+            <div id="messageContainer" class="message-container"></div>
+        </main>
+
+        <!-- S3 Configuration -->
+        <div class="config-section">
+            <details>
+                <summary>S3 Configuration</summary>
+                <div class="config-inputs">
+                    <input type="text" id="s3Bucket" placeholder="S3 Bucket Name" required>
+                    <input type="text" id="s3Region" placeholder="AWS Region (e.g., us-east-1)" required>
+                    <input type="text" id="s3AccessKey" placeholder="AWS Access Key ID" required>
+                    <input type="password" id="s3SecretKey" placeholder="AWS Secret Access Key" required>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- AWS SDK -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1563.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
