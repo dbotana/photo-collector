@@ -9,9 +9,16 @@ class PhotoCollector {
         this.retryCount = 0;
         this.maxRetries = 3;
 
+        // PWA properties
+        this.deferredInstallPrompt = null;
+        this.isOnline = navigator.onLine;
+        this.uploadQueue = [];
+
         try {
             this.initializeElements();
             this.attachEventListeners();
+            this.initializeDefaults();
+            this.initializePWA();
             this.checkBrowserSupport();
             this.loadS3Config();
         } catch (error) {
@@ -24,8 +31,10 @@ class PhotoCollector {
         const elementIds = [
             'cameraBtn', 'uploadBtn', 'fileInput', 'cameraContainer', 'cameraVideo',
             'captureBtn', 'closeCameraBtn', 'previewSection', 'previewImage', 'removeImageBtn',
-            'description', 'uploadToS3Btn', 'progressContainer', 'progressFill', 'progressText',
-            'messageContainer', 's3Bucket', 's3Region', 's3AccessKey', 's3SecretKey'
+            'description', 'patientId', 'visitDate', 'phoneModel', 'uploadToS3Btn',
+            'progressContainer', 'progressFill', 'progressText', 'messageContainer',
+            's3Bucket', 's3Region', 's3AccessKey', 's3SecretKey',
+            'installBanner', 'installBtn', 'dismissInstallBtn', 'networkStatus', 'statusIcon', 'statusText'
         ];
 
         this.elements = {};
@@ -70,14 +79,145 @@ class PhotoCollector {
         [this.elements.s3Bucket, this.elements.s3Region, this.elements.s3AccessKey, this.elements.s3SecretKey]
             .forEach(input => safeEventListener(input, 'change', () => this.saveS3Config()));
 
+        // PWA event listeners
+        safeEventListener(this.elements.installBtn, 'click', () => this.handleInstallClick());
+        safeEventListener(this.elements.dismissInstallBtn, 'click', () => this.dismissInstallPrompt());
+
         // Handle network changes
         window.addEventListener('online', () => {
+            this.updateNetworkStatus(true);
+            this.processUploadQueue();
             this.showMessage('Network connection restored', 'success');
         });
 
         window.addEventListener('offline', () => {
-            this.showMessage('Network connection lost. Please check your internet connection.', 'error');
+            this.updateNetworkStatus(false);
+            this.showMessage('Network connection lost. Uploads will be queued until reconnected.', 'info');
         });
+
+        // PWA install prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            this.deferredInstallPrompt = e;
+            this.showInstallBanner();
+        });
+
+        // Track app install
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA was installed');
+            this.hideInstallBanner();
+            this.showMessage('Photo Collector installed successfully!', 'success');
+        });
+    }
+
+    initializeDefaults() {
+        // Set today's date as default for visit date
+        const today = new Date().toISOString().split('T')[0];
+        this.elements.visitDate.value = today;
+    }
+
+    initializePWA() {
+        // Initialize network status
+        this.updateNetworkStatus(this.isOnline);
+
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker registered:', registration);
+
+                    // Listen for service worker messages
+                    navigator.serviceWorker.addEventListener('message', (event) => {
+                        this.handleServiceWorkerMessage(event);
+                    });
+                })
+                .catch((error) => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+
+        // Check if already installed
+        if (window.matchMedia('(display-mode: standalone)').matches ||
+            window.navigator.standalone === true) {
+            console.log('App is running in standalone mode');
+            this.hideInstallBanner();
+        }
+    }
+
+    updateNetworkStatus(isOnline) {
+        this.isOnline = isOnline;
+        const statusIcon = this.elements.statusIcon;
+        const statusText = this.elements.statusText;
+        const networkStatus = this.elements.networkStatus;
+
+        if (isOnline) {
+            statusIcon.textContent = '🟢';
+            statusText.textContent = 'Online';
+            networkStatus.className = 'network-status online';
+        } else {
+            statusIcon.textContent = '🔴';
+            statusText.textContent = 'Offline';
+            networkStatus.className = 'network-status offline';
+        }
+    }
+
+    showInstallBanner() {
+        if (this.elements.installBanner) {
+            this.elements.installBanner.classList.remove('hidden');
+        }
+    }
+
+    hideInstallBanner() {
+        if (this.elements.installBanner) {
+            this.elements.installBanner.classList.add('hidden');
+        }
+    }
+
+    async handleInstallClick() {
+        if (this.deferredInstallPrompt) {
+            this.deferredInstallPrompt.prompt();
+            const choiceResult = await this.deferredInstallPrompt.userChoice;
+
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+            }
+
+            this.deferredInstallPrompt = null;
+            this.hideInstallBanner();
+        }
+    }
+
+    dismissInstallPrompt() {
+        this.hideInstallBanner();
+        // Remember dismissal for 24 hours
+        localStorage.setItem('installPromptDismissed', Date.now().toString());
+    }
+
+    handleServiceWorkerMessage(event) {
+        const { type, message } = event.data;
+
+        switch (type) {
+            case 'UPLOAD_QUEUED':
+                this.showMessage('Upload queued for when connection is restored', 'info');
+                break;
+            case 'UPLOAD_COMPLETED':
+                this.showMessage('Queued upload completed successfully!', 'success');
+                break;
+            case 'UPLOAD_FAILED':
+                this.showMessage('Upload failed after maximum retries', 'error');
+                break;
+        }
+    }
+
+    async processUploadQueue() {
+        // Tell service worker to process queued uploads
+        if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+            navigator.serviceWorker.controller.postMessage({
+                type: 'PROCESS_QUEUE'
+            });
+        }
     }
 
     async openCamera() {
@@ -284,6 +424,9 @@ class PhotoCollector {
         this.elements.previewImage.src = '';
         this.elements.previewSection.classList.add('hidden');
         this.elements.description.value = '';
+        this.elements.patientId.value = '';
+        this.elements.visitDate.value = '';
+        this.elements.phoneModel.value = '';
         this.clearMessages();
     }
 
@@ -300,6 +443,13 @@ class PhotoCollector {
 
         if (!this.capturedImage) {
             this.showMessage('Please capture or select an image first.', 'error');
+            return;
+        }
+
+        // Validate required form fields
+        const formValidation = this.validatePatientForm();
+        if (!formValidation.valid) {
+            this.showMessage(`Form Error: ${formValidation.message}`, 'error');
             return;
         }
 
@@ -322,9 +472,10 @@ class PhotoCollector {
             await this.initializeS3();
 
             const description = this.elements.description.value.trim();
-            const timestamp = new Date().toISOString();
-            const sanitizedFileName = this.capturedImage.name.replace(/[^a-zA-Z0-9.-]/g, '_');
-            const fileName = `TestUploads/${timestamp}_${sanitizedFileName}`;
+            const patientId = this.elements.patientId.value.trim();
+            const visitDate = this.elements.visitDate.value.trim();
+            const phoneModel = this.elements.phoneModel.value.trim();
+            const fileName = this.generateFileName();
 
             this.showProgress(0);
             this.elements.uploadToS3Btn.disabled = true;
@@ -337,7 +488,10 @@ class PhotoCollector {
                 ContentType: this.capturedImage.type,
                 Metadata: {
                     'description': description || 'No description provided',
-                    'upload-timestamp': timestamp,
+                    'patient-id': patientId,
+                    'visit-date': visitDate,
+                    'phone-model': phoneModel,
+                    'upload-timestamp': new Date().toISOString(),
                     'original-filename': this.capturedImage.name,
                     'file-size': this.capturedImage.size.toString(),
                     'app-version': '1.0.0'
@@ -507,6 +661,44 @@ class PhotoCollector {
         }
 
         return { valid: true };
+    }
+
+    validatePatientForm() {
+        const patientId = this.elements.patientId.value.trim();
+        const visitDate = this.elements.visitDate.value.trim();
+        const phoneModel = this.elements.phoneModel.value.trim();
+
+        if (!patientId) {
+            return { valid: false, message: 'Patient ID is required' };
+        }
+
+        if (!visitDate) {
+            return { valid: false, message: 'Visit Date is required' };
+        }
+
+        if (!phoneModel) {
+            return { valid: false, message: 'Phone Model is required' };
+        }
+
+        // Basic validation patterns
+        const patientIdPattern = /^[A-Za-z0-9_-]+$/;
+        if (!patientIdPattern.test(patientId)) {
+            return { valid: false, message: 'Patient ID can only contain letters, numbers, hyphens, and underscores' };
+        }
+
+        return { valid: true };
+    }
+
+    generateFileName() {
+        const patientId = this.elements.patientId.value.trim();
+        const visitDate = this.elements.visitDate.value.trim();
+        const phoneModel = this.elements.phoneModel.value.trim().replace(/[^a-zA-Z0-9]/g, '');
+
+        // Format: PatientID_YYYY-MM-DD_PhoneModel_timestamp.jpg
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const fileName = `${patientId}_${visitDate}_${phoneModel}_${timestamp}.jpg`;
+
+        return `TestUploads/${fileName}`;
     }
 
     saveS3Config() {

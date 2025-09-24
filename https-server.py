@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-HTTPS Server for iPhone Camera Access
-iOS Safari requires HTTPS for camera access - this provides it.
+HTTPS Server for Photo Collector PWA
+Provides HTTPS access for full PWA functionality including camera access on mobile devices.
 """
 
 import os
