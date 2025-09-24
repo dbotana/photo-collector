@@ -1,0 +1,567 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+/* PWA Installation Banner */
+.install-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    margin: 20px 0;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.install-banner:not(.hidden) {
+    transform: translateY(0);
+}
+
+.install-content {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+}
+
+.install-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.install-text {
+    flex: 1;
+    text-align: left;
+}
+
+.install-text strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.install-text p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.install-buttons {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.install-btn, .dismiss-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.install-btn {
+    background: white;
+    color: #667eea;
+}
+
+.install-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.dismiss-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.dismiss-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Network Status */
+.network-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.network-status.offline {
+    background: rgba(255, 193, 7, 0.9);
+    border-color: rgba(255, 193, 7, 1);
+    color: #212529;
+}
+
+.network-status.online {
+    background: rgba(40, 167, 69, 0.9);
+    border-color: rgba(40, 167, 69, 1);
+    color: white;
+}
+
+/* Main Content */
+.main-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.primary-btn, .secondary-btn, .upload-btn, .capture-btn, .close-btn, .remove-btn {
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    flex: 1;
+    min-width: 140px;
+}
+
+.secondary-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    flex: 1;
+    min-width: 140px;
+}
+
+.upload-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    width: 100%;
+    padding: 15px;
+}
+
+.primary-btn:hover, .secondary-btn:hover, .upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.primary-btn:active, .secondary-btn:active, .upload-btn:active {
+    transform: translateY(0);
+}
+
+/* Camera Container */
+.camera-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #000;
+}
+
+.camera-container video {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.camera-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.capture-btn {
+    background: #fff;
+    color: #333;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.close-btn, .remove-btn {
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,0,0,0.8);
+    color: white;
+}
+
+/* Preview Section */
+.preview-section {
+    margin-top: 30px;
+}
+
+.preview-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.preview-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Description Section */
+.description-section {
+    margin-bottom: 25px;
+}
+
+.description-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Patient Information Section */
+.patient-info-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row:last-child {
+    margin-bottom: 0;
+}
+
+.form-field {
+    flex: 1;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.form-field input[type="text"],
+.form-field input[type="date"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-field input[type="text"]:focus,
+.form-field input[type="date"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-field input[type="text"]::placeholder {
+    color: #999;
+}
+
+/* Responsive form layout */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Filename Preview */
+.filename-preview {
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.filename-preview small {
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+.filename-preview #filenamePreview {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #495057;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.progress-bar {
+    background: #e1e5e9;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#progressText {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 600;
+}
+
+/* Message Container */
+.message-container {
+    margin-top: 20px;
+}
+
+.message {
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message.info {
+    background: #cce7ff;
+    color: #004085;
+    border: 1px solid #b3d7ff;
+}
+
+/* Configuration Section */
+.config-section {
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.config-section details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #555;
+    padding: 10px 0;
+    list-style: none;
+}
+
+.config-section details summary::-webkit-details-marker {
+    display: none;
+}
+
+.config-section details summary::before {
+    content: "⚙️ ";
+    margin-right: 8px;
+}
+
+.config-inputs {
+    display: grid;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.config-inputs input {
+    padding: 12px 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.config-inputs input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .primary-btn, .secondary-btn {
+        min-width: 100%;
+    }
+
+    /* PWA elements mobile responsive */
+    .install-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .install-text {
+        text-align: center;
+    }
+
+    .install-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .install-btn, .dismiss-btn {
+        flex: 1;
+        max-width: 120px;
+    }
+
+    .network-status {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .primary-btn, .secondary-btn, .upload-btn, .capture-btn {
+        min-height: 64px;
+    }
+
+    .capture-btn {
+        width: 88px;
+        height: 88px;
+    }
+
+    .close-btn, .remove-btn {
+        width: 56px;
+        height: 56px;
+    }
+}

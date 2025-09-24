@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Collector</title>
+
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="PhotoCollector">
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- App Icons for iOS -->
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512x512.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📸 Photo Collector</h1>
+            <p>Capture or upload photos with descriptions</p>
+
+            <!-- PWA Installation Banner -->
+            <div id="installBanner" class="install-banner hidden">
+                <div class="install-content">
+                    <div class="install-icon">📱</div>
+                    <div class="install-text">
+                        <strong>Install Photo Collector</strong>
+                        <p>Get the full app experience on your device</p>
+                    </div>
+                    <div class="install-buttons">
+                        <button id="installBtn" class="install-btn">Install</button>
+                        <button id="dismissInstallBtn" class="dismiss-btn">Maybe Later</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offline/Online Status -->
+            <div id="networkStatus" class="network-status">
+                <span id="statusIcon">🟢</span>
+                <span id="statusText">Online</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Camera/Upload Controls -->
+            <div class="capture-section">
+                <div class="button-group">
+                    <button id="cameraBtn" class="primary-btn">
+                        📷 Take Photo
+                    </button>
+                    <button id="uploadBtn" class="secondary-btn">
+                        📁 Upload from Gallery
+                    </button>
+                </div>
+
+                <!-- Hidden file input -->
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
+                <!-- Camera video stream -->
+                <div id="cameraContainer" class="camera-container hidden">
+                    <video id="cameraVideo" autoplay playsinline></video>
+                    <div class="camera-controls">
+                        <button id="captureBtn" class="capture-btn">📷</button>
+                        <button id="closeCameraBtn" class="close-btn">✕</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Preview -->
+            <div id="previewSection" class="preview-section hidden">
+                <div class="preview-container">
+                    <img id="previewImage" class="preview-image" alt="Preview">
+                    <button id="removeImageBtn" class="remove-btn">✕</button>
+                </div>
+
+                <!-- Description Input -->
+                <div class="description-section">
+                    <label for="description">Add Description:</label>
+                    <textarea id="description" placeholder="Enter a description for your photo..." rows="3"></textarea>
+                </div>
+
+                <!-- Patient Information Fields -->
+                <div class="patient-info-section">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="patientId">Patient ID:</label>
+                            <input type="text" id="patientId" placeholder="Enter Patient ID" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="visitDate">Visit Date:</label>
+                            <input type="date" id="visitDate" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="phoneModel">Phone Model:</label>
+                            <input type="text" id="phoneModel" placeholder="e.g., iPhone 14, Samsung S23" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Button and Progress -->
+                <div class="upload-section">
+                    <div class="filename-preview">
+                        <small>File will be named: <span id="filenamePreview">[PatientID]_[Date]_[PhoneModel]_[timestamp].jpg</span></small>
+                    </div>
+                    <button id="uploadToS3Btn" class="upload-btn">
+                        ☁️ Upload to S3
+                    </button>
+
+                    <div id="progressContainer" class="progress-container hidden">
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                        <span id="progressText">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Messages -->
+            <div id="messageContainer" class="message-container"></div>
+        </main>
+
+        <!-- S3 Configuration -->
+        <div class="config-section">
+            <details>
+                <summary>S3 Configuration</summary>
+                <div class="config-inputs">
+                    <input type="text" id="s3Bucket" placeholder="S3 Bucket Name" required>
+                    <input type="text" id="s3Region" placeholder="AWS Region (e.g., us-east-1)" required>
+                    <input type="text" id="s3AccessKey" placeholder="AWS Access Key ID" required>
+                    <input type="password" id="s3SecretKey" placeholder="AWS Secret Access Key" required>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- AWS SDK -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1563.0.min.js"></script>
+    <!-- AWS Config (optional - will be ignored by git) -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
