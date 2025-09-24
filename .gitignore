@@ -1,3 +1,42 @@
+# AWS Credentials and Secrets
+config.js
+aws-config.js
+s3-config.js
+*.key
+*.pem
+.env
+.env.local
+.env.production
+
+# Node modules (if using npm/yarn)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build outputs
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+
 ### AL ###
 #Template for AL projects for Dynamics 365 Business Central
 #launch.json folder
