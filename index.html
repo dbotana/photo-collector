@@ -162,24 +162,51 @@
             setStatus('Testing CORS...', 'info');
 
             try {
+                // Test 1: Try a regular request to see if CORS allows it
                 const response = await fetch(`${API_BASE}/health`, {
-                    method: 'OPTIONS'
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
                 });
 
-                log(`OPTIONS Status: ${response.status}`);
-                log(`CORS Headers: ${JSON.stringify([...response.headers.entries()])}`);
+                log(`GET Health Status: ${response.status}`);
 
-                const corsHeaders = response.headers.get('access-control-allow-origin');
-                log(`Access-Control-Allow-Origin: ${corsHeaders}`);
+                if (response.ok) {
+                    log('✅ CORS allows GET requests from this origin');
 
-                if (corsHeaders) {
-                    setStatus('✅ CORS configured!', 'success');
+                    // Test 2: Try an OPTIONS request
+                    try {
+                        const optionsResponse = await fetch(`${API_BASE}/health`, {
+                            method: 'OPTIONS'
+                        });
+
+                        log(`OPTIONS Status: ${optionsResponse.status}`);
+
+                        // Note: Browsers don't expose CORS headers to JavaScript for security
+                        log('Note: CORS headers are handled by browser, not visible to JavaScript');
+
+                        if (optionsResponse.status === 200) {
+                            setStatus('✅ CORS configured correctly!', 'success');
+                            log('✅ Both GET and OPTIONS requests successful');
+                        } else {
+                            setStatus('⚠️ OPTIONS request failed', 'info');
+                        }
+                    } catch (optionsError) {
+                        log(`OPTIONS Error: ${optionsError.message}`);
+                        setStatus('✅ CORS working (simple requests only)', 'success');
+                    }
                 } else {
-                    setStatus('⚠️ CORS may not be configured', 'info');
+                    setStatus('❌ GET request failed', 'error');
                 }
+
             } catch (error) {
-                log(`Error: ${error.message}`);
-                setStatus(`❌ CORS error: ${error.message}`, 'error');
+                log(`CORS Error: ${error.message}`);
+                if (error.message.includes('CORS')) {
+                    setStatus('❌ CORS blocked - not configured for this origin', 'error');
+                } else {
+                    setStatus(`❌ Network error: ${error.message}`, 'error');
+                }
             }
         }
 
