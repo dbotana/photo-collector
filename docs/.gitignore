@@ -1,8 +1,0 @@
-# Ignore development files
-*.log
-.env*
-.DS_Store
-Thumbs.db
-
-# Don't ignore production config
-!.env.production
