@@ -67,6 +67,8 @@ provider:
 functions:
   api:
     handler: lambda-debug.handler
+    memorySize: 1024
+    timeout: 60
     events:
       - httpApi:
           path: /{proxy+}
