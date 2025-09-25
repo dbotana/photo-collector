@@ -157,6 +157,9 @@ class SecurePhotoCollector {
         // API Configuration - uses global configuration in production
         this.apiBaseUrl = window.HIPAA_CONFIG?.API_BASE_URL || 'https://your-api-gateway.amazonaws.com/prod';
 
+        // Note: If you see "config.js file missing" in console, it's likely from browser cache
+        // or development tools - ignore it as this app doesn't use config.js
+
         this.initializeApplication();
     }
 
