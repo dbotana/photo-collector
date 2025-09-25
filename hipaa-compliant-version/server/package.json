@@ -12,6 +12,7 @@
     "security-check": "npm audit && snyk test",
     "deploy": "serverless deploy",
     "deploy:prod": "serverless deploy --stage prod",
+    "deploy:admin": "powershell -ExecutionPolicy Bypass -File scripts/admin-deploy.ps1",
     "offline": "serverless offline",
     "remove": "serverless remove",
     "logs": "serverless logs -f api",
