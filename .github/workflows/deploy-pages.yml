@@ -49,11 +49,11 @@ jobs:
             echo "⚠️ Warning: Potential secrets found in code"
           fi
 
-          # Check CSP headers
-          if grep -q "Content-Security-Policy" docs/_headers; then
-            echo "✅ CSP headers configured"
+          # Check CSP headers in HTML
+          if grep -q "Content-Security-Policy" docs/index.html; then
+            echo "✅ CSP headers configured in HTML"
           else
-            echo "⚠️ Warning: CSP headers not found"
+            echo "⚠️ Warning: CSP headers not found in HTML"
           fi
 
       - name: Upload artifact
