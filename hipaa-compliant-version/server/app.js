@@ -76,6 +76,38 @@ app.use(compression());
 // Enhanced Winston Logger Configuration with Debug Support
 const isDebugMode = process.env.NODE_ENV !== 'production' || process.env.DEBUG_MODE === 'true';
 
+// Lambda-compatible logger configuration
+const isLambdaEnvironment = process.env.AWS_LAMBDA_FUNCTION_NAME;
+const logTransports = [];
+
+// Always add console transport for Lambda (CloudWatch Logs)
+logTransports.push(new winston.transports.Console({
+    format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.errors({ stack: true }),
+        winston.format.json()
+    )
+}));
+
+// Only add file transports in non-Lambda environments
+if (!isLambdaEnvironment) {
+    logTransports.push(
+        new winston.transports.File({
+            filename: './logs/error.log',
+            level: 'error',
+            maxsize: 10485760, // 10MB
+            maxFiles: 5,
+            tailable: true
+        }),
+        new winston.transports.File({
+            filename: './logs/combined.log',
+            maxsize: 10485760,
+            maxFiles: 10,
+            tailable: true
+        })
+    );
+}
+
 const logger = winston.createLogger({
     level: isDebugMode ? 'debug' : 'info',
     format: winston.format.combine(
@@ -93,34 +125,7 @@ const logger = winston.createLogger({
         pid: process.pid,
         version: process.env.npm_package_version || '1.0.0'
     },
-    transports: [
-        new winston.transports.File({
-            filename: './logs/error.log',
-            level: 'error',
-            maxsize: 10485760, // 10MB
-            maxFiles: 5,
-            tailable: true
-        }),
-        new winston.transports.File({
-            filename: './logs/combined.log',
-            maxsize: 10485760,
-            maxFiles: 10,
-            tailable: true
-        }),
-        new winston.transports.File({
-            filename: './logs/debug.log',
-            level: 'debug',
-            maxsize: 10485760,
-            maxFiles: 3,
-            tailable: true
-        }),
-        ...(isDebugMode ? [new winston.transports.Console({
-            format: winston.format.combine(
-                winston.format.colorize(),
-                winston.format.simple()
-            )
-        })] : [])
-    ]
+    transports: logTransports
 });
 
 // Debug utilities
