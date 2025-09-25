@@ -195,7 +195,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/hipaa-photo-collector-api/prod/1758810301523-2025-09-25T14:25:01.523Z/hipaa-photo-collector-api.zip"
+          "S3Key": "serverless/hipaa-photo-collector-api/prod/1758811191380-2025-09-25T14:39:51.380Z/hipaa-photo-collector-api.zip"
         },
         "Handler": "lambda.handler",
         "Runtime": "nodejs18.x",

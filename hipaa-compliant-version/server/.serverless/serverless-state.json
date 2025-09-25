@@ -247,7 +247,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/hipaa-photo-collector-api/prod/1758810301523-2025-09-25T14:25:01.523Z/hipaa-photo-collector-api.zip"
+                "S3Key": "serverless/hipaa-photo-collector-api/prod/1758811191380-2025-09-25T14:39:51.380Z/hipaa-photo-collector-api.zip"
               },
               "Handler": "lambda.handler",
               "Runtime": "nodejs18.x",
@@ -601,7 +601,7 @@
         ],
         "artifactsS3KeyDirname": "serverless/hipaa-photo-collector-api/prod/code-artifacts",
         "artifact": "C:\\Users\\dbota\\Documents\\color correction files 7-21\\photo-collector\\hipaa-compliant-version\\server\\.serverless\\hipaa-photo-collector-api.zip",
-        "artifactDirectoryName": "serverless/hipaa-photo-collector-api/prod/1758810301523-2025-09-25T14:25:01.523Z"
+        "artifactDirectoryName": "serverless/hipaa-photo-collector-api/prod/1758811191380-2025-09-25T14:39:51.380Z"
       }
     },
     "layers": {},
@@ -609,7 +609,7 @@
     "artifact": "C:\\Users\\dbota\\Documents\\color correction files 7-21\\photo-collector\\hipaa-compliant-version\\server\\.serverless\\hipaa-photo-collector-api.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/hipaa-photo-collector-api/prod/1758810301523-2025-09-25T14:25:01.523Z",
+    "artifactDirectoryName": "serverless/hipaa-photo-collector-api/prod/1758811191380-2025-09-25T14:39:51.380Z",
     "artifact": "hipaa-photo-collector-api.zip"
   }
 }
