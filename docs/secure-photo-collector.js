@@ -167,8 +167,13 @@ class SecurePhotoCollector {
         debugLogger.debug('init', 'Starting HIPAA application initialization', {
             userAgent: navigator.userAgent,
             screenSize: `${window.screen.width}x${window.screen.height}`,
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
+            apiBaseUrl: this.apiBaseUrl,
+            version: '2025.09.25.01'
         });
+
+        // Clear any old localStorage that might cause S3 configuration errors
+        this.clearOldConfiguration();
 
         try {
             debugLogger.debug('init', 'Initializing DOM elements');
@@ -187,6 +192,7 @@ class SecurePhotoCollector {
             this.checkExistingSession();
 
             debugLogger.debug('init', 'Application initialization completed successfully', null, 'success');
+            console.log('✅ HIPAA Photo Collector v2025.09.25.01 - API-based uploads, no S3 config required');
         } catch (error) {
             debugLogger.debug('init', 'Application initialization failed', {
                 error: error.message,
@@ -195,6 +201,25 @@ class SecurePhotoCollector {
             console.error('Failed to initialize SecurePhotoCollector:', error);
             this.showMessage('Failed to initialize the application. Please refresh the page.', 'error');
         }
+    }
+
+    clearOldConfiguration() {
+        // Remove any old S3 configuration that might cause errors
+        const keysToRemove = [
+            's3_config',
+            's3Config',
+            'aws_config',
+            'awsConfig',
+            'photo_collector_s3_config',
+            'photo_collector_config'
+        ];
+
+        keysToRemove.forEach(key => {
+            localStorage.removeItem(key);
+            sessionStorage.removeItem(key);
+        });
+
+        debugLogger.debug('cleanup', 'Cleared old S3 configuration data from storage');
     }
 
     initializeElements() {
