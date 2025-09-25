@@ -147,15 +147,21 @@ app.post('/upload', async (req, res) => {
             });
         }
 
-        // Generate unique upload ID and file path
-        const uploadId = `upload_${Date.now()}`;
+        // Generate file name based on user inputs: organizationID_patientID_visitDate_devicemodel.jpg
         const timestamp = new Date();
         const year = timestamp.getFullYear();
         const month = timestamp.getMonth() + 1;
         const organizationId = metadata.organizationId || 'unknown_org';
+        const patientId = metadata.patientId || 'unknown_patient';
+        const visitDate = metadata.visitDate || timestamp.toISOString().split('T')[0];
+        const deviceModel = metadata.deviceModel || 'unknown_device';
+
+        // Create filename: organizationID_patientID_visitDate_devicemodel.jpg
+        const fileName = `${organizationId}_${patientId}_${visitDate}_${deviceModel}.jpg`;
+        const uploadId = `upload_${Date.now()}`;
 
         // Create S3 key with proper structure
-        const s3Key = `${organizationId}/encrypted-photos/${year}/${month}/${uploadId}.jpg`;
+        const s3Key = `${organizationId}/encrypted-photos/${year}/${month}/${fileName}`;
 
         // Convert base64 to buffer
         const imageBuffer = Buffer.from(image, 'base64');
@@ -186,10 +192,11 @@ app.post('/upload', async (req, res) => {
 
         console.log('S3 upload successful:', result.Location);
 
-        // Also upload metadata as separate file
+        // Also upload metadata as separate file with matching filename
+        const metadataFileName = fileName.replace('.jpg', '.json');
         const metadataParams = {
             Bucket: 'dbota-hipaa-photos-prod',
-            Key: `${organizationId}/metadata/${uploadId}.json`,
+            Key: `${organizationId}/metadata/${metadataFileName}`,
             Body: JSON.stringify({
                 ...metadata,
                 uploadId,
