@@ -16,7 +16,6 @@
         "NODE_ENV": "production",
         "JWT_SECRET": "hipaa-secure-jwt-secret-key-production-2024-minimum-32-chars-photo-collector-v1",
         "JWT_EXPIRES_IN": "1h",
-        "AWS_REGION": "us-east-1",
         "S3_BUCKET_NAME": "dbota-hipaa-photos-prod",
         "KMS_KEY_ID": "1bd0c1fc-fee9-404e-9277-2cf102c121d8",
         "S3_ENCRYPTION_KEY_ID": "1bd0c1fc-fee9-404e-9277-2cf102c121d8",
@@ -247,7 +246,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/hipaa-photo-collector-api/prod/1758811191380-2025-09-25T14:39:51.380Z/hipaa-photo-collector-api.zip"
+                "S3Key": "serverless/hipaa-photo-collector-api/prod/1758812290061-2025-09-25T14:58:10.061Z/hipaa-photo-collector-api.zip"
               },
               "Handler": "lambda.handler",
               "Runtime": "nodejs18.x",
@@ -259,7 +258,6 @@
                   "NODE_ENV": "production",
                   "JWT_SECRET": "hipaa-secure-jwt-secret-key-production-2024-minimum-32-chars-photo-collector-v1",
                   "JWT_EXPIRES_IN": "1h",
-                  "AWS_REGION": "us-east-1",
                   "S3_BUCKET_NAME": "dbota-hipaa-photos-prod",
                   "KMS_KEY_ID": "1bd0c1fc-fee9-404e-9277-2cf102c121d8",
                   "S3_ENCRYPTION_KEY_ID": "1bd0c1fc-fee9-404e-9277-2cf102c121d8",
@@ -593,7 +591,6 @@
         "patterns": [
           "!tests/**",
           "!coverage/**",
-          "!node_modules/aws-sdk/**",
           "!*.test.js",
           "!jest.config.js",
           "!.env*",
@@ -601,7 +598,7 @@
         ],
         "artifactsS3KeyDirname": "serverless/hipaa-photo-collector-api/prod/code-artifacts",
         "artifact": "C:\\Users\\dbota\\Documents\\color correction files 7-21\\photo-collector\\hipaa-compliant-version\\server\\.serverless\\hipaa-photo-collector-api.zip",
-        "artifactDirectoryName": "serverless/hipaa-photo-collector-api/prod/1758811191380-2025-09-25T14:39:51.380Z"
+        "artifactDirectoryName": "serverless/hipaa-photo-collector-api/prod/1758812290061-2025-09-25T14:58:10.061Z"
       }
     },
     "layers": {},
@@ -609,7 +606,7 @@
     "artifact": "C:\\Users\\dbota\\Documents\\color correction files 7-21\\photo-collector\\hipaa-compliant-version\\server\\.serverless\\hipaa-photo-collector-api.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/hipaa-photo-collector-api/prod/1758811191380-2025-09-25T14:39:51.380Z",
+    "artifactDirectoryName": "serverless/hipaa-photo-collector-api/prod/1758812290061-2025-09-25T14:58:10.061Z",
     "artifact": "hipaa-photo-collector-api.zip"
   }
 }

@@ -195,7 +195,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/hipaa-photo-collector-api/prod/1758811191380-2025-09-25T14:39:51.380Z/hipaa-photo-collector-api.zip"
+          "S3Key": "serverless/hipaa-photo-collector-api/prod/1758812290061-2025-09-25T14:58:10.061Z/hipaa-photo-collector-api.zip"
         },
         "Handler": "lambda.handler",
         "Runtime": "nodejs18.x",
@@ -207,7 +207,6 @@
             "NODE_ENV": "production",
             "JWT_SECRET": "hipaa-secure-jwt-secret-key-production-2024-minimum-32-chars-photo-collector-v1",
             "JWT_EXPIRES_IN": "1h",
-            "AWS_REGION": "us-east-1",
             "S3_BUCKET_NAME": "dbota-hipaa-photos-prod",
             "KMS_KEY_ID": "1bd0c1fc-fee9-404e-9277-2cf102c121d8",
             "S3_ENCRYPTION_KEY_ID": "1bd0c1fc-fee9-404e-9277-2cf102c121d8",

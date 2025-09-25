@@ -89,7 +89,6 @@ package:
   patterns:
     - '!tests/**'
     - '!coverage/**'
-    - '!node_modules/aws-sdk/**'  # AWS SDK is provided by Lambda
     - '!*.test.js'
     - '!jest.config.js'
     - '!.env*'

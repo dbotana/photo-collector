@@ -1,7 +1,7 @@
 # PowerShell script to clean up failed CloudFormation stack
 # This script removes the failed stack so deployment can proceed
 
-Write-Host "🔧 HIPAA Photo Collector - Stack Cleanup Script" -ForegroundColor Yellow
+Write-Host "HIPAA Photo Collector - Stack Cleanup Script" -ForegroundColor Yellow
 Write-Host "=============================================" -ForegroundColor Yellow
 Write-Host ""
 
@@ -46,4 +46,4 @@ Write-Host "[SUCCESS] Stack cleanup completed!" -ForegroundColor Green
 Write-Host ""
 Write-Host "[INFO] Next steps:" -ForegroundColor Cyan
 Write-Host "1. Run: npm run deploy:admin" -ForegroundColor White
-Write-Host "2. The deployment should now succeed" -ForegroundColor White
+Write-Host "2. The deployment should now succeed." -ForegroundColor White
