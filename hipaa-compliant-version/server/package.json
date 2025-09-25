@@ -9,7 +9,13 @@
     "test": "jest",
     "lint": "eslint .",
     "audit": "npm audit",
-    "security-check": "npm audit && snyk test"
+    "security-check": "npm audit && snyk test",
+    "deploy": "serverless deploy",
+    "deploy:prod": "serverless deploy --stage prod",
+    "offline": "serverless offline",
+    "remove": "serverless remove",
+    "logs": "serverless logs -f api",
+    "setup-secrets": "node scripts/setup-secrets.js"
   },
   "keywords": [
     "hipaa",
@@ -37,7 +43,8 @@
     "express-winston": "^4.2.0",
     "compression": "^1.7.4",
     "dotenv": "^16.3.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "@vendia/serverless-express": "^4.12.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.1",
@@ -49,7 +56,9 @@
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
     "jest-junit": "^16.0.0",
-    "jest-html-reporters": "^3.1.4"
+    "jest-html-reporters": "^3.1.4",
+    "serverless": "^3.38.0",
+    "serverless-offline": "^13.3.0"
   },
   "engines": {
     "node": ">=18.0.0",
