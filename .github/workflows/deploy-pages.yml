@@ -3,10 +3,8 @@ name: Deploy HIPAA Photo Collector to GitHub Pages
 on:
   push:
     branches: [ main ]
-    paths: [ 'docs/**' ]
   pull_request:
     branches: [ main ]
-    paths: [ 'docs/**' ]
   workflow_dispatch:
 
 permissions:
