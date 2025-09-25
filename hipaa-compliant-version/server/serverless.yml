@@ -11,12 +11,11 @@ provider:
   timeout: 30
   versionFunctions: false
 
-  # Environment variables
+  # Environment variables (AWS_REGION is automatically provided by Lambda)
   environment:
     NODE_ENV: production
     JWT_SECRET: hipaa-secure-jwt-secret-key-production-2024-minimum-32-chars-photo-collector-v1
     JWT_EXPIRES_IN: 1h
-    AWS_REGION: us-east-1
     S3_BUCKET_NAME: dbota-hipaa-photos-prod
     KMS_KEY_ID: 1bd0c1fc-fee9-404e-9277-2cf102c121d8
     S3_ENCRYPTION_KEY_ID: 1bd0c1fc-fee9-404e-9277-2cf102c121d8
